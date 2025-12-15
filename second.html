@@ -5,37 +5,50 @@
   <title>Ramadan – History</title>
   <link rel="icon" type="image/png" href="pictures/logo.png">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Bitter:wght@600;700&display=swap');
+
     html, body {
-        margin: 0;
-        padding: 0;
+      margin: 0;
+      padding: 0;
+      font-family: 'Archivo', sans-serif;
+    }
+
+    /* CHANGE: global text sizing to match index.html */
+    p, li {
+      font-size: 18px;
+      line-height: 1.7;
     }
 
     .bg2 {
-        height: 100vh;
-        width: 100%;
-        background-image: url("pictures/2nd/bg2.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        position: relative;
+      height: 100vh;
+      width: 100%;
+      background-image: url("pictures/2nd/bg2.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
     }
 
     nav {
-        position: absolute;
-        top: 20px;
-        left: 50px;
-        font-family: Lucida Sans, sans-serif;
+      position: absolute;
+      top: 20px;
+      left: 50px;
+      font-family: 'Archivo', sans-serif;
     }
 
     nav a {
-        color: white;
-        text-decoration: none;
-        font-size: 15px;
-        margin-right: 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      margin-right: 10px;
+    }
+
+    nav a + a {
+        margin-left: 20px;
     }
 
     nav a:hover {
-        text-decoration: underline;
+      text-decoration: underline;
     }
 
     .main {
@@ -52,24 +65,26 @@
       border-radius: 10px;
     }
 
+    /* CHANGE: use rem instead of fixed px */
     .history h1 {
       position: absolute;
-      font-size: 60px;
+      font-size: 3rem; 
       margin-top: 150px;
       margin-left: 650px;
       margin-bottom: 10px;
       color: white;
-      font-family: "Lucida handwriting, cursive";
+      font-family: 'Bitter', serif;
     }
 
+    /* CHANGE: normalize paragraph size */
     .history p {
       position: absolute;
-      font-size: 20px;
+      font-size: 18px;
       margin-top: 230px;
       margin-left: 670px;
       width: 520px;
       color: white;
-      font-family: "Lucida Sans, sans-serif";
+      font-family: 'Archivo', sans-serif;
     }
 
     .section-links {
@@ -104,107 +119,112 @@
       background: white;
       transition: left 0.3s ease;
       z-index: -1;
-      }
+    }
 
-      .section-links a:hover::before { 
+    .section-links a:hover::before { 
       left: 0; 
-      }
+    }
 
-      .section-links a:hover {
-        background: white;
-        color: #002331;
-        transform: translateY(-3px);
-        box-shadow: 0 10px 25px rgba(255,255,255,0.3);
-      }
+    .section-links a:hover {
+      background: white;
+      color: #002331;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(255,255,255,0.3);
+    }
 
-      #origins, #establishment, #key-events, #timeline, #modern {
-        padding: 20px 70px;
-      }
+    #origins, #establishment, #key-events, #timeline, #modern {
+      padding: 20px 70px;
+    }
 
-      #origins, #establishment, #key-events, #timeline, #modern h2 {
-        color: white;
-        font-family: "Lucida Sans", sans-serif;
-        margin-bottom: 0;
-      }
+    #origins, #establishment, #key-events, #timeline, #modern h2 {
+      color: white;
+      margin-bottom: 0;
+    }
 
-      .origin-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center;
-      }
-      #origins, #establishment, #key-events, #timeline, #modern p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: #e8f4fd;
-        font-family: Lucida sans, san-serif;
-      }
+    /* shared header style */
+    .subtexts {
+      font-family: 'Bitter', serif;
+      letter-spacing: 0.2px;
+    }
 
-      .img img {
-        width: 100%;
-        max-width: 500px;
-        height: auto;
-        border-radius: 15px;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        transition: transform 0.4s ease;
-      }
+    .origin-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
 
-      #timeline {
-        padding: 20px 70px;
-      }
+    /* CHANGE: removed font-size, keep consistent line-height */
+    #origins, #establishment, #key-events, #timeline, #modern p {
+      line-height: 1.7;
+      color: #e8f4fd;
+      font-family: 'Archivo', sans-serif;
+    }
 
-      #timeline h2 {
-        color: white;
-        font-family: Lucida Sans, sans-serif;
-        margin-bottom: 10px;
-      }
-    
-      #timeline table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 2rem;
-        background: rgba(255,255,255,0.1);
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      }
+    .img img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      transition: transform 0.4s ease;
+    }
 
-      th, td {
-        padding: 16px;
-        text-align: left;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
+    #timeline {
+      padding: 20px 70px;
+    }
 
-      th {
-        background: #4a90e2;
-        font-weight: 600;
-      }
+    #timeline h2 {
+      color: white;
+      margin-bottom: 10px;
+    }
 
-      #key-events a {
-        color: white;
-        text-decoration: none;
-      }
+    #timeline table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 2rem;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
 
-      #key-events a:hover {
-        text-decoration: underline;
-      }
+    th, td {
+      padding: 16px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
 
-      .audio-container {
-        position: absolute;
-        top: 10px;
-        right: 30px;
-        background-color: #001f29;
-        padding: 8px 10px;
-        border-radius: 10px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-        background-color: rgba(0, 31, 41, 0.9);
-        backdrop-filter: blur(6px);
-      }
+    th {
+      background: #4a90e2;
+      font-weight: 600;
+    }
 
-      .audio-container audio {
-        width: 180px;
-        height: 32px;
-      }
+    #key-events a {
+      color: white;
+      text-decoration: none;
+    }
+
+    #key-events a:hover {
+      text-decoration: underline;
+    }
+
+    .audio-container {
+      position: absolute;
+      top: 10px;
+      right: 30px;
+      background-color: #001f29;
+      padding: 8px 10px;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      background-color: rgba(0, 31, 41, 0.9);
+      backdrop-filter: blur(6px);
+    }
+
+    .audio-container audio {
+      width: 180px;
+      height: 32px;
+    }
   </style>
 </head>
 <body>
@@ -218,8 +238,10 @@
       <nav>
         <a href="index.html">Home</a>
         <a href="second.html">History</a>
+        <a href="third.html">Fasting Tips</a>
       </nav>
     </div>
+  
     <div class="history">
       <h1>History of Ramadan</h1>
       <p>From revelation to global tradition - trace the origins and milestones of this holy 
@@ -239,7 +261,7 @@
 
     <div id="origins">
       <div class = "origin-title">
-      <h2>Origins in the Qur'an</h2>
+      <h2 class="subtexts">Origins in the Qur'an</h2>
       </div>
       <div class="origin-content">
         <div class="first">
@@ -258,7 +280,7 @@
       </div>
       
       <div class= "hira">
-        <h2>The First Revelation: Cave of Hira</h2>
+        <h2 class="subtexts">The First Revelation: Cave of Hira</h2>
         <div class="origin-content">
           <div class="img">
             <img src = "pictures/2nd/caveofhira.jpg" alt="Cave of Hira">
@@ -279,7 +301,7 @@
     </div>
 
     <div id="establishment">
-  <h2>Establishment of Fasting</h2>
+<h2 class="subtexts">Establishment of Fasting</h2>
 
   <div class="origin-content">
     <div class="first">
@@ -299,7 +321,7 @@
 
 
     <div id="key-events">
-      <h2>Key Historical Events</h2>
+      <h2 class="subtexts">Key Historical Events</h2>
       <ul>
         <li><a href = "https://www.britannica.com/event/Battle-of-Badr"><strong>Battle of Badr (624 CE):</strong></a> Muslims fasted despite hunger, crediting divine aid for victory.</li>
         <li><a href = "https://en.wikipedia.org/wiki/Conquest_of_Mecca"><strong>Conquest of Mecca (630 CE):</strong></a> Ramadan fasting unified tribes for peaceful surrender.</li>
@@ -308,7 +330,7 @@
     </div>
 
     <div id ="timeline">
-            <h2>Historical Timeline</h2>
+            <h2 class="subtexts">Historical Timeline</h2>
             <table>
                 <thead>
                     <tr><th>Year (CE)</th><th>Event</th></tr>
@@ -323,7 +345,7 @@
         </div>
 
     <div id="modern">
-      <h2>Modern Observance</h2>
+      <h2 class="subtexts">Modern Observance</h2>
       <p>Today, <strong>1.8 billion Muslims</strong> unite in Ramadan with community iftars and global traditions. 
         Explore daily routines on the next page or Eid celebrations on page 4.</p>
       <blockquote style="font-family: lucida sans, sans-serif; color: white;">"O you who have believed, decreed upon you is fasting as it was decreed upon those 
