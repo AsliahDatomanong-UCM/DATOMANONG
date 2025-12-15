@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramadhan around the World</title>
+    <link rel="icon" type="image/png" href="pictures/logo.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Bitter:wght@600;700&display=swap');
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Archivo', sans-serif;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .title {
+            height: 100vh;
+            width: 100%;
+            background-image: url("pictures/2nd/bg2.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        nav {
+            position: absolute;
+            top: 20px;
+            left: 50px;
+            font-family: 'Archivo', sans-serif;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            margin-right: 10px;
+        }
+
+        nav a + a {
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .around h1 {
+            position: absolute;
+            font-size: 2.5rem; 
+            margin-top: 150px;
+            margin-left: 650px;
+            margin-bottom: 10px;
+            color: white;
+            font-family: 'Bitter', serif;
+        }
+        
+        .around p {
+            position: absolute;
+            font-size: 18px;
+            margin-top: 210px;
+            margin-left: 670px;
+            width: 520px;
+            color: white;
+            font-family: 'Archivo', sans-serif;
+        }
+        
+        audio {
+            width: 300px;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+
+        .audio-container {
+            position: absolute;
+            top: 10px;
+            right: 30px;
+            background-color: #001f29;
+            padding: 8px 10px;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            background-color: rgba(0, 31, 41, 0.9);
+            backdrop-filter: blur(6px);
+        }
+
+        .audio-container audio {
+            width: 180px;
+            height: 32px;
+        }
+        
+        .main {
+            background-color: #002331;
+            margin-top: 0;
+            margin-right: 0;
+            padding-top: 1px;
+            position: relative;
+        }
+
+        .section-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 40px 80px;
+            flex-wrap: wrap;
+        }
+
+        .section-links a {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            padding: 16px 24px;
+            color: white;
+            border: 2px solid white;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-links a::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: white;
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .section-links a:hover::before { 
+            left: 0; 
+        }
+
+        .section-links a:hover {
+            background: white;
+            color: #002331;
+            transform: translateY(-3px);
+             box-shadow: 0 10px 25px rgba(255,255,255,0.3);
+        }
+
+        #middleEast, #southeastasia, #southasia, #europe_na, #shared {
+            padding: 20px 70px;
+        }
+
+        #middleEast-title, #southeastasia-title, #southasia-title, #europe_na-title, #shared-title h2 {
+            color: white;
+            margin-bottom: 0;
+        }
+
+        .subtexts {
+            font-family: 'Bitter', serif;
+            letter-spacing: 0.2px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        #middleEast .first p, #southeastasia .first p, #southasia .first p, #europe_na .first p, #shared .first p {
+            line-height: 1.7;
+            color: #e8f4fd;
+            font-family: 'Archivo', sans-serif;
+        }
+
+        .img img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            transition: transform 0.4s ease;
+        }
+
+        footer {
+            background-color: #002331;
+            padding: 24px 20px;
+            text-align: center;
+            font-family: 'Archivo', sans-serif;
+            color: white;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .footer-links a {
+            color: #e7e9f5;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 15px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer small {
+            font-size: 14px;
+            opacity: 0.85;
+        }
+        
+        @media (max-width: 1024px) {
+            .around h1 {
+                margin-left: 400px;
+                font-size: 2.2rem;
+            }
+
+            .around p {
+                margin-left: 420px;
+                width: 420px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                height: auto;
+                padding-bottom: 80px;
+            }
+
+            nav {
+                position: static;
+                text-align: center;
+                padding-top: 20px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px 12px;
+                font-size: 14px;
+            }
+
+            .audio-container {
+                position: static;
+                margin: 20px auto;
+                width: fit-content;
+            }
+
+            .around h1, .around p {
+                position: static;
+                margin: 20px auto;
+                text-align: center;
+                width: 90%;
+            }
+
+            .around h1 {
+                font-size: 2rem;
+            }
+
+            .around p {
+                font-size: 16px;
+            }
+
+            .section-links {
+                padding: 30px 20px;
+            }
+
+            .section-links a {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+
+            #middleEast, #southeastasia, #southasia, #europe_na, #shared {
+                padding: 30px 25px;
+            }
+
+            .content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .img img {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            p {
+                font-size: 15px;
+            }
+
+            .around h1 {
+                font-size: 1.8rem;
+            }
+
+            audio {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class = "title">
+        <div class ="audio-container">
+            <audio controls>
+                <source src="audio/Peace In The Middle East  Copyright Free Islamic Background Music.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="second.html">History</a>
+            <a href="third.html">Fasting Tips</a>
+            <a href="#">Around the World</a>
+        </nav>
+        <div class="around">
+        <h1>Ramadhan Around the World</h1>
+        <p>
+            Ramadhan unites Muslims globally through fasting, prayer, and charity, yet local customs 
+            create vibrant diversity in its observance.
+        </p>
+        </div>
+    </div>
+    <div class = "main">
+        <div class="section-links">
+            <a href="#middleEast">Middle East</a>
+            <a href="#southeastasia">Southeast Asia</a>
+            <a href="#southasia">South Asia</a>
+            <a href="#europe_na">Europe & North America</a>
+            <a href="#shared">Shared Values</a>
+        </div>
+
+        <div id = "middleEast">
+            <div class = "middleEast-title">
+                <h2 class = "subtexts">Middle East</h2>
+            </div>
+            <div class = "content">
+                <div class = "first">
+                    <p>
+                        Saudi Arabia's Grand Mosque in Mecca becomes the epicenter of Ramadhan, 
+                        hosting Taraweeh prayers that attract millions nightly, with live broadcasts 
+                        reaching Muslims worldwide for a sense of shared devotion.​
+                        <br><br>
+                        Egypt transforms into a lantern-lit wonderland, where fanous hang from 
+                        Cairo's streets, symbolizing joy and guiding iftar gatherings; families 
+                        start suhoor with hearty foul medames beans simmered in spices and crispy 
+                        ta'ameya (fava bean falafel), fueling the day's fast amid rooftop cannon 
+                        booms at sunset.​
+                        <br><br>
+                        UAE elevates iftar with opulent hotel tents offering global buffets 
+                        alongside Emirati dates and luqaimat dumplings, capped by dazzling fireworks 
+                        over Dubai's skyline, merging ancient rituals with contemporary luxury to draw 
+                        locals and tourists alike.
+                    </p>
+                </div>
+                <div class="img">
+                    <img src="pictures/4th/mecca.jpg" alt="Mecca">
+                </div>
+            </div>
+        </div>
+        <div id = "southeastasia">
+            <div class = "southeastasia-title">
+                <h2 class = "subtexts">Southeast Asia</h2>
+            </div>
+            <div class = "content">
+                <div class = "first">
+                    <p>
+                        Southeast Asia's Ramadan traditions beautifully blend local customs with 
+                        Islamic devotion. In Indonesia, communities in sarongs gather 1-2 days 
+                        before Ramadan for padusan rituals at sacred springs, rivers or beaches, 
+                        taking flower-infused baths to purify body and soul, merging Javanese 
+                        Hindu-Buddhist heritage with faith preparation.​
+                        <br><br>
+                        Malaysia's street bazaars overflow with rendang beef curry, charitable bubur 
+                        lambuk porridge, and colorful kuih sweets like onde-onde, drawing crowds for 
+                        affordable iftar bonding. Brunei signals iftar with historic cannon salutes 
+                        from rooftops, followed by ambuyat sago feasts and royal Taraweeh prayers; 
+                        Singapore's pasar malam markets offer sup sahur soups and roti john sandwiches 
+                        for pre-dawn socializing, while Philippines' Moro communities host mass iftars 
+                        with halal roasted chicken or beef in lechon style, echoed by village sahur 
+                        calls amid tropical hospitality.
+                    </p>
+                </div>
+                <div class="img">
+                    <img src="pictures/4th/moro_food.jpg" alt="moro_food">
+                </div>
+            </div>
+        </div>
+        <div id = "southasia">
+            <div class = "southasia-title">
+                <h2 class = "subtexts">South Asia</h2>
+            </div>
+            <div class = "content">
+                <div class = "first">
+                    <p>
+                        Pakistan's chaand raat, the moon-sighting eve of Eid, transforms cities 
+                        like Lahore and Karachi into vibrant hubs where markets overflow late into 
+                        the night with women applying intricate henna (mehndi) designs, shopping 
+                        for shimmering bangles, jewelry, and Eid outfits, while families savor sheer 
+                        khurma—a creamy vermicelli pudding laced with milk, dates, nuts, and 
+                        cardamom—as fireworks light the sky and mosques announce the new moon. 
+                        <br><br>
+                        India's Bohri Muslims in Mumbai exemplify generosity through community 
+                        trusts like the Anjuman-I-Islam, organizing massive thali feasts with biryani, 
+                        sheer khurma, and kebabs distributed to thousands of needy families via 
+                        door-to-door deliveries and langars, fostering unity in the bustling Bohri 
+                        mohallas. Bangladesh ramps up zakat collections through mosque drives and 
+                        NGOs, with rooftop meriam cannons booming at sunset to signal iftar across 
+                        Dhaka, followed by streets filled with fuchka snacks, beef bhuna, and family 
+                        gatherings under festive lights.
+                    </p>
+                </div>
+                <div class="img">
+                    <img src="pictures/4th/henna.jpg" alt="henna">
+                </div>
+            </div>
+        </div>
+        <div id = "europe_na">
+            <div class = "europe_na-title">
+                <h2 class = "subtexts">Europe & North America</h2>
+            </div>
+            <div class = "content">
+                <div class = "first">
+                    <p>
+                        <strong>London, UK</strong>: Muslims flock to parks like Victoria Park or 
+                        Canary Wharf for massive skyline iftars, spreading prayer mats amid city 
+                        lights for communal dates, samosas, and biryani under the Thames backdrop, 
+                        while Egyptian-style TV marathons of Ramadan series dictate evening 
+                        schedules across households.​
+                        <br><br>
+                        <strong>Michigan, US</strong>: As America's largest Arab-American hub, 
+                        communities host drive-thru iftars at mosques like the Islamic Center of 
+                        America, distributing boxed meals of shawarma, hummus, and maamoul cookies 
+                        via cars to accommodate fasting workers, alongside Ramadan Villages with 50+ 
+                        food trucks, heated tents, and youth sports from 10pm-3am.​
+                        <br><br>
+                        Virtual Taraweeh streams from Mecca or local imams on Zoom and YouTube 
+                        platforms connect scattered families globally, enabling elderly parents 
+                        in Pakistan to pray alongside children in London.​
+                    </p>
+                </div>
+                <div class="img">
+                    <img src="pictures/4th/london.webp" alt="london">
+                </div>
+            </div>
+        </div>
+        <div id = "shared">
+            <div class = "shared-title">
+                <h2 class = "subtexts">🤍 Shared Values</h2>
+            </div>
+            <div class = "a">
+                <div class = "first">
+                    <p>
+                        Across the globe, Ramadhan unites Muslims through shared values of 
+                        compassion, charity and community. Core Ramadan practices — suhoor 
+                        (pre-dawn nourishing meal), iftar (sunset fast-breaking with dates 
+                        and water as per prophetic tradition), the five daily salah augmented 
+                        by extended Taraweeh night prayers, and daily Quran recitation — form the 
+                        spiritual backbone uniting the global ummah in discipline, reflection, and 
+                        devotion.
+                    </p>
+                </div>
+            </div>
+        </div>   
+    </div>
+</body>
+<footer class = "footer">
+  <div class="footer-inner">
+    <small>Created by <strong>Asliah Datomanong</strong></small>
+
+    <div class="footer-links">
+      <a href="https://www.facebook.com/asliah.datumanong.723" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12z"/>
+        </svg>
+        Facebook
+      </a>
+
+      <a href="https://github.com/AsliahDatomanong-UCM" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.4-1-1.1-1.3-1.1-1.3-.9-.6.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 3 .8.1-.7.4-1.1.7-1.4-2.2-.2-4.6-1.1-4.6-5a4 4 0 0 1 1-2.8c-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.5 9.5 0 0 1 5 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7a4 4 0 0 1 1 2.8c0 3.9-2.4 4.7-4.7 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/>
+        </svg>
+        GitHub
+      </a>
+    </div>
+
+    <small>© 2025</small>
+  </div>
+</footer>
+</html>
