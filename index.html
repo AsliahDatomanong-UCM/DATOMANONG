@@ -133,6 +133,22 @@
   width: 300px;
   height: auto;
 }
+
+.btn {
+    display: inline-block;
+    margin-top: 0px;
+    margin-left: 870px;
+    padding: 10px 20px;
+    background-color: #4d599b;
+    color: white;
+    text-decoration: none;
+    font-family: lucida sans, sans-serif;
+    border-radius: 5px;
+  }
+
+  .btn:hover {
+    background-color: #6c75c3;
+  }
 </style>
 </head>
 
@@ -140,17 +156,20 @@
   <div class="bg">
     <div class="nav">
     <a href="index.html">Home</a>
+    <a href="second.html" style="margin-left: 20px;">History</a>
     </div>
 
     <h1>Ramadhan Kareem</h1>
     <p>
-      The ninth month of the Islamic lunar calendar, the holy month of fasting, 
-      prayer, reflection, and community.
+      A simple guide to understanding Ramadan, why Muslims fast, and how to make the 
+      most of this special month.
     </p>
+    <a class="btn" href="#basics">Start with the basics</a>
   </div>
 
   <div class="sec-color">
-    <h2>What is Ramadhan?</h2>
+    <section id="#basics">
+      <h2>What is Ramadhan?</h2>
       <div class="answer">
         <p>
         Ramadan is the ninth month of the Islamic lunar calendar, observed by Muslims 
@@ -165,26 +184,25 @@
         <img src ="pictures/1st/answer_1.png" alt="answer_1">
       </div>
       <hr class = "hr">
-        <h4>Do's during Ramadhan:</h4>
-        <div class="practice-container">
-          <div class="practice-ul">
-            <ul>
-              <li>Begin each day with a pre-dawn meal called Suhoor.</li>
-              <li>Break your fast at sunset with Iftar, often shared with family and community.</li>
-              <li>Perform the five daily prayers punctually.</li>
-              <li>Engage in extra prayers and Quran recitation, especially the Taraweeh prayers at night.</li>
-              <li>Give to charity to help those in need.</li>
-              <li>Practice kindness, patience, and forgiveness.</li>
-            </ul>
-          </div>
-          <div class="ul-img">
-            <img src="pictures/1st/do.png" alt="dos">
-          </div>
+      <h4>Do's during Ramadhan:</h4>
+      <div class="practice-container">
+        <div class="practice-ul">
+          <ul>
+            <li>Begin each day with a pre-dawn meal called Suhoor.</li>
+            <li>Break your fast at sunset with Iftar, often shared with family and community.</li>
+            <li>Perform the five daily prayers punctually.</li>
+            <li>Engage in extra prayers and Quran recitation, especially the Taraweeh prayers at night.</li>
+            <li>Give to charity to help those in need.</li>
+            <li>Practice kindness, patience, and forgiveness.</li>
+          </ul>
         </div>
+        <div class="ul-img">
+          <img src="pictures/1st/do.png" alt="dos">
+        </div>
+      </div>
 
-
-        <h4>Don'ts during Ramadhan:</h4>
-        <div class="practice-container">
+      <h4>Don'ts during Ramadhan:</h4>
+      <div class="practice-container">
         <div class="practice-ul">
           <ul>
             <li>Do not eat or drink during daylight hours.</li>
@@ -195,9 +213,10 @@
           </ul>
         </div>
         <div class="ul-img">
-        <img src="pictures/1st/dont.png" alt="dont">
+          <img src="pictures/1st/dont.png" alt="dont">
         </div>
       </div>
+    </section>
   </div>
 </body>
 </html>
