@@ -48,7 +48,7 @@ text-decoration: underline;
     top: 130px;
     right: 70px; 
     margin: 0;
-    color: #2f2b6f; /* darker purple */
+    color: #2f2b6f;
     font-size: 3rem;
     font-family: 'Bitter', serif;
     text-shadow: 2px 3px 6px rgba(0,0,0,0.25);
@@ -78,7 +78,14 @@ text-decoration: underline;
   }
 
 
-  .sec-color h2 {
+  .answer-text h2 {
+    margin: 0;
+    padding-top: 30px;
+    font-family: 'Bitter', serif;
+    color: white;
+  }
+
+  .DV {
     margin: 0;
     padding-left: 50px;
     padding-top: 30px;
@@ -100,22 +107,25 @@ text-decoration: underline;
     text-align: justify;
   }
 
-  .answer img{
+  .sec-color img{
+    background-color: #353a69;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 350px;
     height: auto;
   }
 
-  .hr {
-  border: 0;
-  height: 2px;
-  background-color: white;
-  margin-left: 40px; 
-  margin-right: 40px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  .answer img img {
+  width: 300px;
+  height: auto;
+  display: block;
 }
 
-.sec-color h4 {
+  .sec-color h4 {
     margin: 0;
     padding-left: 70px;
     padding-top: 30px;
@@ -131,43 +141,43 @@ text-decoration: underline;
   }
 
   .practice-container {
-  display: flex;
-  align-items: flex-start;
-  gap: 30px;
-  padding-left: 30px;
-  margin-bottom: 30px;
-}
-
-.ul-img img {
-  width: 300px;
-  height: auto;
-}
-
-  .btn {
-    position: absolute;
-    top: 290px;
-    right: 70px;
-    padding: 14px 28px;
-    background-color: #2f2b6f; /* darker purple */
-    color: white;
-    text-decoration: none;
-    font-family: 'Archivo', sans-serif;
-    font-weight: 600;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding-left: 30px;
+    margin-bottom: 30px;
   }
 
-  .btn:hover {
-    background-color: #3c3aa3;
-    transform: translateY(-3px);
+  .ul-img img {
+    width: 300px;
+    height: auto;
   }
 
+  .audio-container {
+      position: absolute;
+      top: 10px;
+      right: 30px;
+      background-color: #2f2b6f;
+      padding: 8px 10px;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      backdrop-filter: blur(6px);
+    }
+
+  .audio-container audio {
+    width: 180px;
+    height: 32px;
+    }
 </style>
 </head>
 
 <body>
   <div class="bg">
+    <div class ="audio-container">
+      <audio controls>
+        <source src="audio/Peace In The Middle East  Copyright Free Islamic Background Music.mp3" type="audio/mpeg">
+      </audio>
+    </div>
     <div class="nav">
     <a href="index.html">Home</a>
     <a href="second.html">History</a>
@@ -179,27 +189,41 @@ text-decoration: underline;
       A simple guide to understanding Ramadan, why Muslims fast, and how to make the 
       most of this special month.
     </p>
-    <a class="btn" href="#basics">Start with the basics</a>
   </div>
 
   <div class="sec-color">
     <section id="#basics">
-      <h2>What is Ramadhan?</h2>
       <div class="answer">
-        <p>
-        Ramadan is the ninth month of the Islamic lunar calendar, observed by Muslims 
-        worldwide as a holy month of fasting, prayer, reflection, and community. It 
-        commemorates the month during which the Qur'an was revealed to the Prophet Muhammad. 
-        This sacred period is marked by spiritual growth and self-discipline. During Ramadan, 
-        Muslims fast from dawn until sunset, abstaining from food, drink, and other specific 
-        physical needs. Fasting cultivates mindfulness, patience, and empathy for those less 
-        fortunate. In addition to fasting, Muslims increase their prayers, charity, and reading 
-        of the Qur'an.
-        </p>
-        <img src ="pictures/1st/answer_1.png" alt="answer_1">
+        <div class="answer-text">
+          <h2>What is Ramadhan?</h2>
+          <p>
+            Ramadan is the ninth month of the Islamic lunar calendar, observed by Muslims 
+            worldwide as a holy month of fasting, prayer, reflection, and community. It 
+            commemorates the month during which the Qur'an was revealed to the Prophet Muhammad. 
+            This sacred period is marked by spiritual growth and self-discipline. During Ramadan, 
+            Muslims fast from dawn until sunset, abstaining from food, drink, and other specific 
+            physical needs. Fasting cultivates mindfulness, patience, and empathy for those less 
+            fortunate. In addition to fasting, Muslims increase their prayers, charity, and reading 
+            of the Qur'an.
+          </p>
+          <hr>
+          <h2>Why Do Muslims Fast?</h2>
+          <p>
+            Fasting during Ramadan is an act of worship and obedience to God.
+          </p>
+          <hr>
+          <h2>A Day During Ramadan</h2>
+          <p>
+            A typical day begins with <strong>Suhoor</strong> and ends with <strong>Iftar</strong>.
+          </p>
+        </div>
+        <div class="answer-img">
+          <img src="pictures/1st/answer_1.png" alt="Ramadan illustration">
+        </div>
       </div>
-      <hr class = "hr">
-      <h2>Do's during Ramadhan:</h2>
+
+      <br>
+      <h2 class = "DV">Do's during Ramadhan:</h2>
       <div class="practice-container">
         <div class="practice-ul">
           <ul>
@@ -215,8 +239,8 @@ text-decoration: underline;
           <img src="pictures/1st/do.png" alt="dos">
         </div>
       </div>
-
-      <h2>Don'ts during Ramadhan:</h2>
+      
+      <h2 class = "DV">Don'ts during Ramadhan:</h2>
       <div class="practice-container">
         <div class="practice-ul">
           <ul>

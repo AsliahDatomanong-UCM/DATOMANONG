@@ -9,7 +9,7 @@
 
     :root {
       --primary-bg: #353a69;
-      --accent: #2f2b6f; /* match darker purple from index */
+      --accent: #2f2b6f;
       --text-light: #ffffff;
     }
 
@@ -25,7 +25,6 @@
       color: var(--text-light);
     }
 
-    /* match index sizing */
     p, li {
       font-size: 18px;
       line-height: 1.7;
@@ -35,7 +34,6 @@
       color: inherit;
     }
 
-    /* Hero */
     .hero {
       position: relative;
       height: 100vh;
@@ -232,10 +230,31 @@
         left: 24px;
       }
     }
+
+    .audio-container {
+      position: absolute;
+      top: 10px;
+      right: 30px;
+      background-color: #2f2b6f;
+      padding: 8px 10px;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      backdrop-filter: blur(6px);
+    }
+    
+    .audio-container audio {
+    width: 180px;
+    height: 32px;
+    }
   </style>
 </head>
 <body>
   <header class="hero">
+    <div class ="audio-container">
+    <audio controls>
+        <source src="audio/Peace In The Middle East  Copyright Free Islamic Background Music.mp3" type="audio/mpeg">
+      </audio>
+    </div>
     <nav>
       <a href="index.html">Home</a>
       <a href="second.html">History</a>
