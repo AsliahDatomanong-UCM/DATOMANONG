@@ -2,182 +2,137 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Ramadan – History</title>
+  <title>Ramadhan – History</title>
   <link rel="icon" type="image/png" href="pictures/logo.png">
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Bitter:wght@600;700&display=swap');
+
+    :root {
+      --primary-bg: #002331;
+      --text-light: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
 
     html, body {
       margin: 0;
       padding: 0;
       font-family: 'Archivo', sans-serif;
+      background-color: var(--primary-bg);
+      color: var(--text-light);
     }
 
     p, li {
       font-size: 18px;
       line-height: 1.7;
+      color: #e8f4fd;
     }
 
-    .bg2 {
+    /* ================= HERO ================= */
+    header.hero {
+      position: relative;
       height: 100vh;
-      width: 100%;
       background-image: url("pictures/2nd/bg2.jpg");
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding: 0 60px;
     }
 
     nav {
       position: absolute;
       top: 20px;
       left: 50px;
-      font-family: 'Archivo', sans-serif;
+      display: flex;
+      gap: 20px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
       font-size: 15px;
-      margin-right: 10px;
     }
 
-    nav a + a {
-        margin-left: 20px;
-    }
+    nav a:hover { text-decoration: underline; }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .main {
-      background-color: #002331;
-      margin-top: 0;
-      margin-right: 0;
-      padding-top: 1px;
-      position: relative;
-    }
-
-    audio {
-      width: 300px;
-      margin-top: 15px;
+    .audio-container {
+      position: absolute;
+      top: 10px;
+      right: 30px;
+      background-color: rgba(0,31,41,0.9);
+      padding: 8px 10px;
       border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      backdrop-filter: blur(6px);
     }
 
-    .history h1 {
-      position: absolute;
-      font-size: 3rem; 
-      margin-top: 150px;
-      margin-left: 650px;
-      margin-bottom: 10px;
-      color: white;
+    .audio-container audio {
+      width: 180px;
+      height: 32px;
+    }
+
+    .hero-content {
+      margin-top: 140px;
+      max-width: 620px;
+      text-align: right;
+    }
+
+    .hero-content h1 {
       font-family: 'Bitter', serif;
+      font-size: 3.2rem;
+      margin-bottom: 12px;
     }
 
-    .history p {
-      position: absolute;
-      font-size: 18px;
-      margin-top: 230px;
-      margin-left: 670px;
-      width: 520px;
-      color: white;
-      font-family: 'Archivo', sans-serif;
+    /* ================= MAIN ================= */
+    main {
+      padding: 60px 20px 80px;
     }
 
-    .section-links {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      padding: 40px 80px;
-      flex-wrap: wrap;
-    }
-
-    .section-links a {
-      flex: 1;
-      min-width: 120px;
-      text-align: center;
-      padding: 16px 24px;
-      color: white;
-      border: 2px solid white;
-      border-radius: 12px;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .section-links a::before {
-      content: '';
-      position: absolute;
-      top: 0; left: -100%;
-      width: 100%; height: 100%;
-      background: white;
-      transition: left 0.3s ease;
-      z-index: -1;
-    }
-
-    .section-links a:hover::before { 
-      left: 0; 
-    }
-
-    .section-links a:hover {
-      background: white;
-      color: #002331;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(255,255,255,0.3);
-    }
-
-    #origins, #establishment, #key-events, #timeline, #modern {
-      padding: 20px 70px;
-    }
-
-    #origins, #establishment, #key-events, #timeline, #modern h2 {
-      color: white;
-      margin-bottom: 0;
-    }
-
-    .subtexts {
-      font-family: 'Bitter', serif;
-      letter-spacing: 0.2px;
-    }
-
-    .origin-content {
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      gap: 32px;
+    }
+
+    .section {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 28px 26px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    }
+
+    .section h2 {
+      font-family: 'Bitter', serif;
+      margin-bottom: 12px;
+    }
+
+    .media-block {
+      display: flex;
+      gap: 32px;
       align-items: center;
+      flex-wrap: wrap;
+      margin-top: 12px;
     }
 
-    #origins, #establishment, #key-events, #timeline, #modern p {
-      line-height: 1.7;
-      color: #e8f4fd;
-      font-family: 'Archivo', sans-serif;
-    }
-
-    .img img {
+    .media-block img {
       width: 100%;
       max-width: 500px;
-      height: auto;
-      border-radius: 15px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-      transition: transform 0.4s ease;
+      border-radius: 14px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.5);
     }
 
-    #timeline {
-      padding: 20px 70px;
-    }
+    ul { padding-left: 20px; }
 
-    #timeline h2 {
-      color: white;
-      margin-bottom: 10px;
-    }
-
-    #timeline table {
+    /* ================= TIMELINE ================= */
+    table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 2rem;
+      margin-top: 20px;
       background: rgba(255,255,255,0.1);
       border-radius: 12px;
       overflow: hidden;
@@ -192,160 +147,185 @@
 
     th {
       background: #4a90e2;
-      font-weight: 600;
-    }
-
-    #key-events a {
       color: white;
-      text-decoration: none;
     }
 
-    #key-events a:hover {
+    /* ================= FOOTER ================= */
+    footer {
+      background-color: rgba(0,31,41,0.95);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 26px 20px;
+      text-align: center;
+      color: #e8f4fd;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #e8f4fd;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+    }
+
+    .footer-links a:hover {
       text-decoration: underline;
     }
 
-    .audio-container {
-      position: absolute;
-      top: 10px;
-      right: 30px;
-      background-color: #001f29;
-      padding: 8px 10px;
-      border-radius: 10px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-      background-color: rgba(0, 31, 41, 0.9);
-      backdrop-filter: blur(6px);
+    footer small {
+      font-size: 14px;
+      opacity: 0.85;
     }
 
-    .audio-container audio {
-      width: 180px;
-      height: 32px;
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 768px) {
+      header.hero {
+        padding: 0 26px;
+        justify-content: flex-start;
+      }
+
+      .hero-content {
+        text-align: left;
+        margin-top: 140px;
+      }
+
+      .hero-content h1 {
+        font-size: 2.4rem;
+      }
+
+      .media-block {
+        flex-direction: column;
+      }
+
+      p, li {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="bg2">
-    <div class ="audio-container">
-      <audio controls>
-        <source src="audio/Peace In The Middle East  Copyright Free Islamic Background Music.mp3" type="audio/mpeg">
-      </audio>
-    </div>
-    <div class="header">
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="second.html">History</a>
-        <a href="third.html">Fasting Tips</a>
-      </nav>
-    </div>
-  
-    <div class="history">
-      <h1>History of Ramadan</h1>
-      <p>From revelation to global tradition - trace the origins and milestones of this holy 
-      month.</p>
-    </div>
+
+<header class="hero">
+  <div class="audio-container">
+    <audio controls>
+      <source src="audio/Peace In The Middle East  Copyright Free Islamic Background Music.mp3" type="audio/mpeg">
+    </audio>
   </div>
 
-  <div class="main">
-    <div class="section-links">
-      <a href="#origins">Origins</a>
-      <a href="#establishment">Fasting</a>
-      <a href="#key-events">Events</a>
-      <a href="#timeline">Timeline</a>
-      <a href="#modern">Modern</a>
-    </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="second.html">History</a>
+    <a href="third.html">Fasting Tips</a>
+  </nav>
 
-
-    <div id="origins">
-      <div class = "origin-title">
-      <h2 class="subtexts">Origins in the Qur'an</h2>
-      </div>
-      <div class="origin-content">
-        <div class="first">
-          <p>
-            <strong>Ramadan</strong> (Ramadhan), the ninth month of the Islamic lunar calendar, 
-            holds profound significance for over 1.8 billion Muslims worldwide. Its roots trace 
-            back to <strong>610 CE</strong> when the <strong>Qur'an</strong> — Islam's holy book 
-            — was first revealed to Prophet Muhammad by the angel <strong>Gabriel (Jibril)</strong>. 
-            This divine event transformed Ramadan into the "month of revelation," making 
-            <strong>fasting (sawm)</strong> one of Islam's Five Pillars.
-          </p>
-        </div>
-        <div class="img">
-          <img src="pictures/2nd/Qur'an.jpg" alt="Qur'an Image">
-        </div>
-      </div>
-      
-      <div class= "hira">
-        <h2 class="subtexts">The First Revelation: Cave of Hira</h2>
-        <div class="origin-content">
-          <div class="img">
-            <img src = "pictures/2nd/caveofhira.jpg" alt="Cave of Hira">
-          </div>
-          <div class = "r_para">
-            <p>In <strong>610 CE</strong>, during Ramadan, 40-year-old Muhammad retreated to 
-            the <strong>Cave of Hira</strong> on <strong>Jabal al-Nour (Mountain of Light)</strong> 
-            near Mecca for meditation. Amid pre-Islamic Arabia's polytheistic society, 
-            Gabriel appeared and commanded:</p>
-
-            <blockquote style="font-family: lucida sans, sans-serif; color: white;">"Recite in the 
-            name of your Lord who created..." <cite>(Qur'an, Surah Al-Alaq 96:1-5)</cite></blockquote>
-            <p>This moment, <strong>Laylat al-Qadr (Night of Power)</strong>, initiated the 
-            Qur'an's revelation over 23 years.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="establishment">
-<h2 class="subtexts">Establishment of Fasting</h2>
-
-  <div class="origin-content">
-    <div class="first">
-      <p>
-        Fasting became a pillar of Islam in 624 CE, two years after the Hijra
-        to Medina. Initially voluntary, it was formalized via Qur'anic verse
-        2:183, emphasizing piety and self-restraint. Early Muslims fasted from
-        dawn to sunset, adapting pre-Islamic customs into spiritual discipline.
-      </p>
-    </div>
-
-    <div class="img">
-      <img src="pictures/2nd/fasting.jpg" alt="Fasting Image">
-    </div>
+  <div class="hero-content">
+    <h1>History of Ramadhan</h1>
+    <p>From revelation to global tradition — trace the origins and milestones of this holy month.</p>
   </div>
-</div>
+</header>
 
+<main>
+  <div class="container">
 
-    <div id="key-events">
-      <h2 class="subtexts">Key Historical Events</h2>
+    <section class="section">
+      <h2>Origins in the Qur'an</h2>
+      <div class="media-block">
+        <p>
+          <strong>Ramadhan</strong>, the ninth month of the Islamic calendar, began in
+          <strong>610 CE</strong> when the Qur'an was revealed to Prophet Muhammad.
+        </p>
+        <img src="pictures/2nd/Qur'an.jpg" alt="Qur'an">
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>The First Revelation: Cave of Hira</h2>
+      <div class="media-block">
+        <img src="pictures/2nd/caveofhira.jpg" alt="Cave of Hira">
+        <p>
+          During Ramadan, Prophet Muhammad retreated to the Cave of Hira where
+          the first verses of the Qur'an were revealed.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Establishment of Fasting</h2>
+      <div class="media-block">
+        <p>
+          In <strong>624 CE</strong>, fasting became obligatory through Qur'an 2:183.
+        </p>
+        <img src="pictures/2nd/fasting.jpg" alt="Fasting">
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Key Historical Events</h2>
       <ul>
-        <li><a href = "https://www.britannica.com/event/Battle-of-Badr"><strong>Battle of Badr (624 CE):</strong></a> Muslims fasted despite hunger, crediting divine aid for victory.</li>
-        <li><a href = "https://en.wikipedia.org/wiki/Conquest_of_Mecca"><strong>Conquest of Mecca (630 CE):</strong></a> Ramadan fasting unified tribes for peaceful surrender.</li>
-        <li><strong><a href = "https://www.britannica.com/place/Ottoman-Empire">Ottoman</a> and <a href ="https://en.wikipedia.org/wiki/Abbasid_dynasty">Abbasid</a> Eras:</strong> Grand iftars and taraweeh prayers spread cultural traditions.</li>
+        <li><strong>Battle of Badr (624 CE)</strong></li>
+        <li><strong>Conquest of Mecca (630 CE)</strong></li>
+        <li><strong>Ottoman & Abbasid Eras</strong></li>
       </ul>
-    </div>
+    </section>
 
-    <div id ="timeline">
-            <h2 class="subtexts">Historical Timeline</h2>
-            <table>
-                <thead>
-                    <tr><th>Year (CE)</th><th>Event</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>610</td><td>First Qur'an revelation in Cave Hira</td></tr>
-                    <tr><td>622</td><td>Hijra to Medina - Fasting established</td></tr>
-                    <tr><td>624</td><td>Fasting made obligatory (Surah Al-Baqarah 2:183)</td></tr>
-                    <tr><td>632</td><td>Prophet's final Ramadan</td></tr>
-                </tbody>
-            </table>
-        </div>
+    <section class="section">
+      <h2>Historical Timeline</h2>
+      <table>
+        <tr><th>Year</th><th>Event</th></tr>
+        <tr><td>610</td><td>First Qur'an revelation</td></tr>
+        <tr><td>622</td><td>Hijra to Medina</td></tr>
+        <tr><td>624</td><td>Fasting made obligatory</td></tr>
+        <tr><td>632</td><td>Final Ramadan</td></tr>
+      </table>
+    </section>
 
-    <div id="modern">
-      <h2 class="subtexts">Modern Observance</h2>
-      <p>Today, <strong>1.8 billion Muslims</strong> unite in Ramadan with community iftars and global traditions. 
-        Explore daily routines on the next page or Eid celebrations on page 4.</p>
-      <blockquote style="font-family: lucida sans, sans-serif; color: white;">"O you who have believed, decreed upon you is fasting as it was decreed upon those 
-        before you that you may become righteous." (Qur'an 2:183)</blockquote>
-    </div>
+    <section class="section">
+      <h2>Modern Observance</h2>
+      <p>Today, over <strong>1.8 billion Muslims</strong> observe Ramadhan worldwide.</p>
+    </section>
+
   </div>
+</main>
+
+  <footer>
+    <div class="footer-inner">
+      <small>Created by <strong>Asliah Datomanong</strong></small>
+
+      <div class="footer-links">
+        <a href="https://www.facebook.com/asliah.datumanong.723" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12z"/>
+          </svg>
+          Facebook
+        </a>
+
+        <a href="https://github.com/AsliahDatomanong-UCM" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.4-1-1.1-1.3-1.1-1.3-.9-.6.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 3 .8.1-.7.4-1.1.7-1.4-2.2-.2-4.6-1.1-4.6-5a4 4 0 0 1 1-2.8c-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.5 9.5 0 0 1 5 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7a4 4 0 0 1 1 2.8c0 3.9-2.4 4.7-4.7 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/>
+          </svg>
+          GitHub
+        </a>
+      </div>
+
+      <small>© 2025</small>
+    </div>
+  </footer>
+
 </body>
 </html>

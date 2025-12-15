@@ -1,261 +1,366 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Ramadhan</title>
+  <meta charset="UTF-8" />
+  <title>Ramadhan – Home</title>
   <link rel="icon" type="image/png" href="pictures/logo.png">
+
   <style>
-  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Bitter:wght@600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Bitter:wght@600;700&display=swap');
 
-  html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Archivo', sans-serif;
-  }
+    :root {
+      --primary-bg: #353a69;
+      --accent: #2f2b6f;
+      --text-light: #ffffff;
+    }
 
-  .bg {
-    height: 100vh;
-    width: 100vw;     
-    background-image: url(pictures/1st/BG_1.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-  }
+    * { box-sizing: border-box; }
 
-.nav {
-position: absolute;
-top: 20px;
-left: 50px;    
-font-family: 'Archivo', sans-serif;
-}
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Archivo', sans-serif;
+      background-color: var(--primary-bg);
+      color: var(--text-light);
+    }
 
-.nav a {
-color: white;
-text-decoration: none;
-font-size: 15px;
-}
+    p, li {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #e7e9f5;
+    }
 
-.nav a + a {
-  margin-left: 20px;
-}
+    /* ================= HERO ================= */
+    header.hero {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      background-image: url("pictures/1st/BG_1.png");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-end;
+      padding: 0 60px;
+    }
 
-.nav a:hover {
-text-decoration: underline;
-}
+    nav {
+      position: absolute;
+      top: 20px;
+      left: 50px;
+      display: flex;
+      gap: 20px;
+    }
 
-  .bg h1 {
-    position: absolute;
-    top: 130px;
-    right: 70px; 
-    margin: 0;
-    color: #2f2b6f;
-    font-size: 3rem;
-    font-family: 'Bitter', serif;
-    text-shadow: 2px 3px 6px rgba(0,0,0,0.25);
-  }
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 15px;
+    }
 
-  p, li {
-  font-size: 18px;
-  line-height: 1.7;
-  }
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-  .bg p {
-    position: absolute;
-    top: 200px;
-    right: 70px; 
-    width: 470px;
-    margin: 0;
-    color: white;
-    font-family: 'Archivo', sans-serif;
-    text-align: justify;
-  }
-
-  .sec-color {
-    width: 100vw;                 
-    background-color: #353a69;
-    margin: 0;
-    padding: 30px 0;
-  }
-
-
-  .answer-text h2 {
-    margin: 0;
-    padding-top: 30px;
-    font-family: 'Bitter', serif;
-    color: white;
-  }
-
-  .DV {
-    margin: 0;
-    padding-left: 50px;
-    padding-top: 30px;
-    font-family: 'Bitter', serif;
-    color: white;
-  }
-  
-  .answer {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    padding: 0 50px;
-  }
-
-  .answer p{
-    flex: 1;
-    font-family: 'Archivo', sans-serif;
-    color: white;
-    text-align: justify;
-  }
-
-  .sec-color img{
-    background-color: #353a69;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 350px;
-    height: auto;
-  }
-
-  .answer img img {
-  width: 300px;
-  height: auto;
-  display: block;
-}
-
-  .sec-color h4 {
-    margin: 0;
-    padding-left: 70px;
-    padding-top: 30px;
-    font-family: 'Bitter', serif;
-    color: white;
-  }
-
-  .practice-ul{
-    width: 700px;
-    padding-left: 50px;
-    font-family: 'Archivo', sans-serif;
-    color: white;
-  }
-
-  .practice-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 30px;
-    padding-left: 30px;
-    margin-bottom: 30px;
-  }
-
-  .ul-img img {
-    width: 300px;
-    height: auto;
-  }
-
-  .audio-container {
+    .audio-container {
       position: absolute;
       top: 10px;
       right: 30px;
-      background-color: #2f2b6f;
+      background-color: var(--accent);
       padding: 8px 10px;
       border-radius: 10px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-      backdrop-filter: blur(6px);
     }
 
-  .audio-container audio {
-    width: 180px;
-    height: 32px;
+    .audio-container audio {
+      width: 180px;
+      height: 32px;
     }
-</style>
+
+    .hero-content {
+      margin-top: 140px;
+      max-width: 620px;
+      text-align: right;
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: 3.2rem;
+      font-family: 'Bitter', serif;
+      color: var(--accent);
+      text-shadow: 2px 3px 6px rgba(0,0,0,0.35);
+    }
+
+    .hero p {
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.35);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 28px;
+      background-color: var(--accent);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #3c3aa3;
+      transform: translateY(-3px);
+    }
+
+    /* ================= MAIN ================= */
+    main {
+      padding: 60px 20px 80px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      gap: 32px;
+    }
+
+    .section {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 28px 26px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    }
+
+    .section h2 {
+      margin: 0 0 12px;
+      font-family: 'Bitter', serif;
+    }
+
+    .intro-block {
+      text-align: center;
+    }
+
+    .intro-block p {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .intro-image {
+      width: 520px;
+      max-width: 100%;
+      margin: 16px auto;
+      display: block;
+    }
+
+    .media-block {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .media-block img {
+      width: 320px;
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+    }
+
+    .media-block.list-media {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .media-block.list-media img {
+      margin-left: auto;
+      box-shadow: none;
+      border-radius: 0;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 8px 0 0;
+    }
+
+    .divider {
+      height: 1px;
+      background: rgba(255,255,255,0.15);
+      margin: 18px 0;
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background-color: rgba(0,0,0,0.15);
+      padding: 24px 20px;
+      text-align: center;
+      font-family: 'Archivo', sans-serif;
+      color: #e7e9f5;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .footer-links a {
+      color: #e7e9f5;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 15px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    footer small {
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 768px) {
+      header.hero {
+        padding: 0 26px;
+        align-items: flex-start;
+      }
+
+      .hero-content {
+        text-align: left;
+      }
+
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      nav {
+        left: 24px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="bg">
-    <div class ="audio-container">
-      <audio controls>
-        <source src="audio/Peace In The Middle East  Copyright Free Islamic Background Music.mp3" type="audio/mpeg">
-      </audio>
-    </div>
-    <div class="nav">
+
+<header class="hero">
+  <div class="audio-container">
+    <audio controls>
+      <source src="audio/Peace In The Middle East  Copyright Free Islamic Background Music.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <nav>
     <a href="index.html">Home</a>
     <a href="second.html">History</a>
     <a href="third.html">Fasting Tips</a>
-    </div>
+  </nav>
 
+  <div class="hero-content">
     <h1>Ramadhan Kareem</h1>
-    <p>
-      A simple guide to understanding Ramadan, why Muslims fast, and how to make the 
-      most of this special month.
-    </p>
+    <p>A simple guide to understanding Ramadhan, why Muslims fast, and how to make the most of this sacred month.</p>
+    <a class="btn" href="https://youtu.be/5pvmUoYNbmU?si=u8JWyZjBOQVsIPst" target="_blank">Know the basics</a>
   </div>
+</header>
 
-  <div class="sec-color">
-    <section id="#basics">
-      <div class="answer">
-        <div class="answer-text">
-          <h2>What is Ramadhan?</h2>
-          <p>
-            Ramadan is the ninth month of the Islamic lunar calendar, observed by Muslims 
-            worldwide as a holy month of fasting, prayer, reflection, and community. It 
-            commemorates the month during which the Qur'an was revealed to the Prophet Muhammad. 
-            This sacred period is marked by spiritual growth and self-discipline. During Ramadan, 
-            Muslims fast from dawn until sunset, abstaining from food, drink, and other specific 
-            physical needs. Fasting cultivates mindfulness, patience, and empathy for those less 
-            fortunate. In addition to fasting, Muslims increase their prayers, charity, and reading 
-            of the Qur'an.
-          </p>
-          <hr>
-          <h2>Why Do Muslims Fast?</h2>
-          <p>
-            Fasting during Ramadan is an act of worship and obedience to God.
-          </p>
-          <hr>
-          <h2>A Day During Ramadan</h2>
-          <p>
-            A typical day begins with <strong>Suhoor</strong> and ends with <strong>Iftar</strong>.
-          </p>
-        </div>
-        <div class="answer-img">
-          <img src="pictures/1st/answer_1.png" alt="Ramadan illustration">
-        </div>
-      </div>
+<main>
+  <div class="container">
 
-      <br>
-      <h2 class = "DV">Do's during Ramadhan:</h2>
-      <div class="practice-container">
-        <div class="practice-ul">
-          <ul>
-            <li>Begin each day with a pre-dawn meal called Suhoor.</li>
-            <li>Break your fast at sunset with Iftar, often shared with family and community.</li>
-            <li>Perform the five daily prayers punctually.</li>
-            <li>Engage in extra prayers and Quran recitation, especially the Taraweeh prayers at night.</li>
-            <li>Give to charity to help those in need.</li>
-            <li>Practice kindness, patience, and forgiveness.</li>
-          </ul>
-        </div>
-        <div class="ul-img">
-          <img src="pictures/1st/do.png" alt="dos">
-        </div>
-      </div>
-      
-      <h2 class = "DV">Don'ts during Ramadhan:</h2>
-      <div class="practice-container">
-        <div class="practice-ul">
-          <ul>
-            <li>Do not eat or drink during daylight hours.</li>
-            <li>Avoid negative behavior such as lying, gossiping, or anger.</li>
-            <li>Refrain from smoking and other harmful habits.</li>
-            <li>Avoid unnecessary arguments or conflicts.</li>
-            <li>Do not neglect your physical and spiritual health.</li>
-          </ul>
-        </div>
-        <div class="ul-img">
-          <img src="pictures/1st/dont.png" alt="dont">
-        </div>
+    <section class="section">
+      <div class="intro-block">
+        <h2>What is Ramadhan?</h2>
+        <img class="intro-image" src="pictures/1st/answer_1.png" alt="Ramadhan illustration">
+        <p>
+          Ramadhan is the ninth month of the Islamic lunar calendar, observed as a time of fasting, prayer,
+          reflection, and charity. It commemorates the revelation of the Qur’an and encourages discipline,
+          empathy, and spiritual growth.
+        </p>
       </div>
     </section>
+
+    <section class="section">
+      <h2>Why Do Muslims Fast?</h2>
+      <p>
+        Fasting is an act of worship and obedience to Allah. It teaches patience, humility,
+        and compassion for those in need.
+      </p>
+      <div class="divider"></div>
+      <h2>A Day During Ramadhan</h2>
+      <p>
+        A typical day begins with <strong>Suhoor</strong> (pre-dawn meal) and ends with
+        <strong>Iftar</strong> (breaking the fast at sunset).
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Do’s During Ramadhan</h2>
+      <div class="media-block list-media">
+        <ul>
+          <li>Begin the day with Suhoor</li>
+          <li>Break the fast with Iftar</li>
+          <li>Pray regularly and read the Qur’an</li>
+          <li>Give charity and help others</li>
+          <li>Practice patience and kindness</li>
+        </ul>
+        <img src="pictures/1st/do.png" alt="Do's">
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Don’ts During Ramadhan</h2>
+      <div class="media-block list-media">
+        <ul>
+          <li>Do not eat or drink during daylight</li>
+          <li>Avoid anger, gossip, and lying</li>
+          <li>Refrain from smoking</li>
+          <li>Avoid unnecessary conflicts</li>
+          <li>Do not neglect health or prayers</li>
+        </ul>
+        <img src="pictures/1st/dont.png" alt="Don'ts">
+      </div>
+    </section>
+
   </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <small>Created by <strong>Asliah Datomanong</strong></small>
+
+    <div class="footer-links">
+      <a href="https://www.facebook.com/asliah.datumanong.723" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.2 1.8.2v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0 0 22 12z"/>
+        </svg>
+        Facebook
+      </a>
+
+      <a href="https://github.com/AsliahDatomanong-UCM" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.4-1-1.1-1.3-1.1-1.3-.9-.6.1-.6.1-.6 1 .1 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 3 .8.1-.7.4-1.1.7-1.4-2.2-.2-4.6-1.1-4.6-5a4 4 0 0 1 1-2.8c-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.5 9.5 0 0 1 5 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7a4 4 0 0 1 1 2.8c0 3.9-2.4 4.7-4.7 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/>
+        </svg>
+        GitHub
+      </a>
+    </div>
+
+    <small>© 2025</small>
+  </div>
+</footer>
+
 </body>
 </html>
